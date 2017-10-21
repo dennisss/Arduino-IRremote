@@ -156,6 +156,16 @@ void  IRrecv::enableIRIn ( )
 	pinMode(irparams.recvpin, INPUT);
 }
 
+void  IRrecv::disableIRIn ( )
+{
+#ifdef ESP32
+	timerEnd(timer);
+#else
+	#error "Not Implemented"
+#endif
+}
+
+
 //+=============================================================================
 // Enable/disable blinking of pin 13 on IR processing
 //
